@@ -188,7 +188,7 @@ myForm.addEventListener('submit', function (e) {
     //если поля заполнены и выдают тру при тесте на соответствие нужному регексу
     if (name.test(spread[0][1]) && number.test(spread[1][1]) && email.test(spread[2][1]) && name.test(spread[3][1]) && message.test(spread[4][1])) {
     //запрос идет на рут и обратно отправляется тот же JSON объект, выводится в консольку
-    fetch('http://localhost:8080/', {
+    fetch('http://localhost:/', {
         headers: {"Content-Type": "application/json"},
         method: 'post',
         body: JSON.stringify(json)
