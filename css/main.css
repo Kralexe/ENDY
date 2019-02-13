@@ -10,6 +10,10 @@ html, body, button, h2, p {
   box-sizing: border-box;
 }
 
+.navigation-bar320 {
+    display:none;
+}
+
 /*burger and logo*/
 .logo-container {
   left: 50px;
