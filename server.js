@@ -7,7 +7,7 @@ var http = require('http');
 var server = http.createServer(app);
 
 app.use(bodyParser.json());
-// viewed at http://localhost:8080
+
 app.get('/', function(req, res) {
     res.sendFile(path.join(public, 'endy.html'));
 });
