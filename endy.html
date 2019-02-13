@@ -170,6 +170,7 @@ function myFunction() {
 //если успех, то всплывет сексесс поп-ап на 3 секунды (можно убрать досрочно кликом вне него), если нет, то вылезет ошибка
 //все поля должны быть заполнены и соответствовать регексам, пайпы и бектики запрещены
 const myForm = document.getElementById('myForm');
+const inputs = myForm.getElementsByTagName('input');
 
 myForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -188,13 +189,14 @@ myForm.addEventListener('submit', function (e) {
     //если поля заполнены и выдают тру при тесте на соответствие нужному регексу
     if (name.test(spread[0][1]) && number.test(spread[1][1]) && email.test(spread[2][1]) && name.test(spread[3][1]) && message.test(spread[4][1])) {
     //запрос идет на рут и обратно отправляется тот же JSON объект, выводится в консольку
-    fetch('https://endywebpage.herokuapp.com', {
+    fetch('http://localhost:3000/', {
         headers: {"Content-Type": "application/json"},
         method: 'post',
         body: JSON.stringify(json)
     }).then(function (response) {
         console.log(response.text());
-    }).then(function(){
+        myForm.reset();})
+    .then(function(){
         Swal.fire({
           position: 'top-end',
           type: 'success',
