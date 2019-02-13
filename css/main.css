@@ -976,7 +976,7 @@ height: 400px;
 .logo-container {
   left: 0;
   height: 50px;
-  width:79%;
+  width:100%;
   top: 0;
   z-index: 9;
   position: fixed;
