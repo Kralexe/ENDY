@@ -3,6 +3,9 @@ var app = express();
 var path = require('path');
 var public = __dirname;
 var bodyParser = require('body-parser');
+var http = require('http');
+var server = http.createServer(app);
+
 app.use(bodyParser.json());
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
@@ -15,4 +18,4 @@ app.post('/', function (req, res) {
 
 app.use('/', express.static(public));
 
-app.listen(8080);
+app.listen(process.env.PORT || 3000);
